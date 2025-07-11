@@ -4,7 +4,7 @@ const { LoginPage } = require('../pages/LoginPage');
 const loginData = require('../data/loginData');
 
 loginData.forEach(({ username, password, expected }) => {
-  test(`Login test: ${username} / ${expected}`, async ({ page }) => {
+  test(`Login test for ${username} with expected output : ${expected}`, async ({ page }) => {
     const loginPage = new LoginPage(page);
     await loginPage.goto();
     await loginPage.login(username, password);
